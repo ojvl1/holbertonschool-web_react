@@ -19,6 +19,33 @@ const printTeacher: printteacherFunction = (firstName, lastName) => {
   return `${firstName.charAt(0).toUpperCase()}. ${lastName}`;
 };
 
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
@@ -38,3 +65,6 @@ const director1: Directors = {
 console.log(director1);
 console.log(teacher3);
 console.log("John", "Doe");
+const student = new StudentClass('Jane', 'Smith');
+console.log(student.workOnHomework());
+console.log(student.displayName());
