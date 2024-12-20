@@ -12,12 +12,20 @@ function App() {
         </div>
       </header>
       <div className='line'></div>
-      <main className='App-body'>
-        <p>Login to access the full dashboard</p>
+      <main>
+        <div className='App-body'>
+          <p>
+            Login to access the full dashboard
+          </p>
+        </div>
       </main>
       <div className='line'></div>
-      <footer className='App-footer'>
-        <p>Copyright 2024 - holberton School</p>
+      <footer>
+        <div className='App-footer'>
+          <p>
+            Copyright 2024 - holberton School
+          </p>
+        </div>
       </footer>
     </>
   )
