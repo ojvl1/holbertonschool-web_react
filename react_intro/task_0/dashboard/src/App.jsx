@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import holbertonlogo from './assets/holberton-logo.jpg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <div className='App-header'>
+          <img src={holbertonlogo} alt="holberton logo" />
+          <h1>School dashboard</h1>
+        </div>
+      </header>
+      <div className='line'></div>
+      <main className='App-body'>
+        <p>Login to access the full dashboard</p>
+      </main>
+      <div className='line'></div>
+      <footer className='App-footer'>
+        <p>Copyright 2024 - holberton School</p>
+      </footer>
     </>
   )
 }
