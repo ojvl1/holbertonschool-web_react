@@ -1,5 +1,6 @@
 import holbertonlogo from './assets/holberton-logo.jpg'
 import './App.css'
+import '/utils.js'
 
 function App() {
 
