@@ -1,11 +1,10 @@
-import React from "react";
 import holbertonlogo from './assets/holberton-logo.jpg';
 import './App.css';
-import { getCurrentYear, getFooterCopy } from './utils.js';
-import { Notifications } from "./Notifications.jsx";
+import { getCurrentYear, getFooterCopy } from './utils';
+import Notifications from "./Notifications.jsx";
 
 function App() {
-  const isIndex = false;
+  const isIndex = window.location.pathname === '/';
 
   return (
     <>
