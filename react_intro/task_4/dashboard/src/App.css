@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.App-header img {
+  width: 150px;
+  height: 150px;
+}
+
+.App-header h1 {
+  color: #e1003c;
+  font-family: "Roboto", sans-serif;
+  margin-left: 5px;
+}
+
+.App-header img {
+  margin-top: 5px;
+}
+
+.App-body {
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 60px;
+}
+
+.App-body div {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.App-body button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  maring-top: 200px;
+  padding: 10px;
+}
+
+.line {
+  background-color: #e1003c;
+  width: 2px;
+  height: 2px;
+}
