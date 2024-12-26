@@ -48,16 +48,29 @@ main {
   margin-top: 10px;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 550px;
+}
+
 .App-footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-  padding: 10px;
 }
 
 .line {
-  background-color: #e1003c;
-  width: 2px;
-  height: 2px;
+  width: 100%; /* Span full width */
+  height: 2px; /* Thin line */
+  background-color: #e1003c; /* Red color */
+  margin-bottom: 10px; /* Space between line and paragraph */
+}
+
+.App-footer p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0; /* Remove default margin */
 }

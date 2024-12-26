@@ -15,8 +15,8 @@ function App() {
           <h1>School dashboard</h1>
         </div>
       </header>
-      <div className='line'></div>
       <main>
+        <div className='line'></div>
         <div className='App-body'>
           <p>Login to access the full dashboard</p>
           <label htmlFor="email">Email:</label>
@@ -26,8 +26,8 @@ function App() {
           <button>OK</button>
         </div>
       </main>
-      <div className='line'></div>
       <footer>
+        <div className='line'></div>
         <div className='App-footer'>
           <p>
             Copyright {getCurrentYear()} - {getFooterCopy(isIndex)}
