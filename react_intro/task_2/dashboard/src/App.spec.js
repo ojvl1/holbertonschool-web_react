@@ -31,7 +31,7 @@ describe("test of App component", () => {
   test("testing the input elements", () => {
     render(<App />);
     const email = screen.getByRole("textbox");
-    const password = screen.getByRole("textbox");
+    const password = screen.getByRole("textbox", { type: "password" });
 
     expect(email).toBeInTheDocument(/@.*\.com$/);
     expect(password).toBeInTheDocument(
