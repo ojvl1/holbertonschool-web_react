@@ -1,7 +1,7 @@
 import holbertonlogo from './assets/holberton-logo.jpg';
 import "./App.css";
-import { getCurrentYear, getFooterCopy } from './utils/utils.jsx';
-import Notifications from '../../../../task_4/dashboard/src/Notifications';
+import { getCurrentYear, getFooterCopy } from '../utils/utils.js';
+import Notifications from '../Notifications/Notifications.jsx';
 
 function App() {
   const isIndex = window.location.pathname === '/';

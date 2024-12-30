@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Notifications from "../../../../task_4/dashboard/src/Notifications";
+import Notifications from "../Notifications/Notifications.jsx";
 
 describe("Notifications Component Tests", () => {
   test('renders the notifications title "Here is the list of notifications"', () => {

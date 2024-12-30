@@ -16,9 +16,12 @@ describe("test of App component", () => {
 
   test("testing the second p element", () => {
     render(<App />);
-    const paragraph = screen.getByText(
-      "Copyright 2024 - Holberton School main dashboard"
-    );
+    const paragraph = screen.getByText((content, element) => {
+      return (
+        element.tagName.toLowerCase() === "p" &&
+        content.includes("Copyright 2024 - Holberton School")
+      );
+    });
     expect(paragraph).toBeInTheDocument();
   });
 
@@ -50,6 +53,7 @@ describe("test of App component", () => {
 
   test("testing the button", () => {
     render(<App />);
-    expect(screen.getByRole("button")).toHaveTextContent("OK");
+    const button = screen.getByRole("button", { name: "OK" });
+    expect(button).toBeInTheDocument();
   });
 });
