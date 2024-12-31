@@ -1,0 +1,16 @@
+.App-login {
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 60px;
+}
+
+.App-login div {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.App-login button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
