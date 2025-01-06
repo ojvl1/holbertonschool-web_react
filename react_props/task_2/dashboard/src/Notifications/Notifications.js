@@ -1,33 +1,54 @@
 import React from "react";
+import PropTypes from "prop-types";
+import NotificationItem from "./NotificationItem.jsx";
 import "./Notifications.css";
-import NotificationItem from "./NotificationItem";
-import { getLatestNotification } from "../utils/utils";
-import closeButton from "../assets/close-icon.png";
+import closeButton from "../assets/close-button.png";
 
-export default function Notifications() {
-  return (
-    <div className="Notifications">
-      <button
-        style={{
+function Notifications({ notifications }) {
+  return React.createElement(
+    "div",
+    { className: "Notifications" },
+    React.createElement(
+      "button",
+      {
+        style: {
           right: 30,
           border: "none",
           position: "absolute",
           background: "transparent",
-        }}
-        aria-label="close"
-        onClick={() => console.log("Close button has been clicked")}
-      >
-        <img src={closeButton} alt="close button icon" />
-      </button>
-      <p>Here is the list of notifications</p>
-      <ul>
-        <NotificationItem type="default" value="New course available" />
-        <NotificationItem type="urgent" value="New resume available" />
-        <NotificationItem
-          type="urgent"
-          html={{ __html: getLatestNotification() }}
-        />
-      </ul>
-    </div>
+        },
+        "aria-label": "close",
+        onClick: () => console.log("Close button has been clicked"),
+      },
+      React.createElement("img", { src: closeButton, alt: "close button icon" })
+    ),
+    React.createElement("p", null, "Here is the list of notifications"),
+    React.createElement(
+      "ul",
+      null,
+      notifications.map((notification) =>
+        React.createElement(NotificationItem, {
+          key: notification.id,
+          type: notification.type,
+          value: notification.value,
+          html: notification.html,
+        })
+      )
+    )
   );
 }
+
+Notifications.propTypes = {
+  notifications: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      type: PropTypes.string.isRequired,
+      value: PropTypes.string,
+      html: PropTypes.shape({
+        __html: PropTypes.string,
+      }),
+    })
+  ),
+};
+
+export default Notifications;
