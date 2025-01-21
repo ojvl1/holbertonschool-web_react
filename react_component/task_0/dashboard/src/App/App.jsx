@@ -31,7 +31,13 @@ const coursesList = [
   { id: 2, name: "Webpack", credit: 20 },
   { id: 3, name: "React", credit: 40 },
 ];
-class App extends React.Component{
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: this.props.isLoggedIn,
+    };
+  }
   render() {
     return (
       <>
