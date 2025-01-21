@@ -6,23 +6,24 @@ import Footer from '../Footer/Footer.jsx';
 import Notifications from '../Notifications/Notifications.jsx';
 import CourseList from '../CourseList/CourseList.jsx';
 import PropTypes from 'prop-types';
+import { getLatestNotification } from '../utils/utils.js';
 
 const notificationsList = [
   {
-    id: Math.random(),
+    id: 1,
     type: 'default',
     value: 'New course available'
   },
   {
-    id: Math.random(),
+    id: 2,
     type: 'urgent',
     value: 'New resume available'
   },
   {
-    id: Math.random(),
+    id: 3,
     type: 'urgent',
     value: '',
-    html: { __html: '<strong>Urgent requirement</strong>' }
+    html: { __html: getLatestNotification() }
   }
 ];
 
@@ -36,7 +37,7 @@ class App extends Component{
     super(props);
   }
   render() {
-    const { isLoggedIn } = this.props;s
+    const { isLoggedIn } = this.props;
     return (
       <>
         <Notifications notifications={notificationsList} displayDrawer={true} />
