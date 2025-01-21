@@ -41,7 +41,7 @@ class App extends Component{
       <>
         <Notifications notifications={notificationsList} displayDrawer={true} />
         <Header />
-        {this.state.isLoggedIn ? (
+        {isLoggedIn ? (
           <CourseList courses={coursesList} />
           ) : (
           <Login />
