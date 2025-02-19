@@ -4,27 +4,22 @@ import Notifications from './Notifications';
 import { StyleSheetTestUtils } from 'aphrodite';
 
 describe('<Notifications />', () => {
-  let handleDisplayDrawerMock;
-  let handleHideDrawerMock;
-
-  beforeEach(() => {
-    StyleSheetTestUtils.suppressStyleInjection();
-    handleDisplayDrawerMock = jest.fn();
-    handleHideDrawerMock = jest.fn();
-  });
-
-  afterEach(() => {
-    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-  });
-
-  it('Notifications renders without errors', () => {
+  it('calls handleDisplayDrawer when clicking on the menu item', () => {
+    const handleDisplayDrawer = jest.fn();
     const wrapper = shallow(
-      <Notifications
-        handleDisplayDrawer={handleDisplayDrawerMock}
-        handleHideDrawer={handleHideDrawerMock}
-      />
+      <Notifications handleDisplayDrawer={handleDisplayDrawer} />
     );
-    expect(wrapper.exists()).toEqual(true);
+    wrapper.find('.menuItem').simulate('click');
+    expect(handleDisplayDrawer).toHaveBeenCalled();
+  });
+
+  it('calls handleHideDrawer when clicking on the close button', () => {
+    const handleHideDrawer = jest.fn();
+    const wrapper = shallow(
+      <Notifications displayDrawer={true} handleHideDrawer={handleHideDrawer} />
+    );
+    wrapper.find('button[aria-label="Close"]').simulate('click');
+    expect(handleHideDrawer).toHaveBeenCalled();
   });
 
   it("Notifications renders the text 'Here is the list of notifications' when notifications are provided", () => {
