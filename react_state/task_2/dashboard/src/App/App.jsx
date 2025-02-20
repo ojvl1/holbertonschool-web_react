@@ -69,7 +69,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoggedIn } = this.props;
+    const { user } = this.props;
     return (
       <AppContext.Provider value={{ user, logOut: this.logOut }}>
         <Notifications
@@ -118,14 +118,6 @@ const styles = StyleSheet.create({
     }
   }
 })
-
-App.defaultProps = {
-  isLoggedIn: false,
-};
-
-App.propTypes = {
-  isLoggedIn: PropTypes.bool,
-};
 
 if (document.getElementById("root")) {
   const root = ReactDOM.createRoot(document.getElementById("root"));
